@@ -1,0 +1,41 @@
+import { Navbar, Nav, Container } from "react-bootstrap";
+import { FaShoppingCart, FaUser } from "react-icons/fa";
+import { LinkContainer } from "react-router-bootstrap";
+import logo from "../assets/logo.png";
+const Header = () => {
+  return (
+    <header>
+      <Navbar bg="dark" variant="dark" expand="md " collapseOnSelect>
+        <Container>
+          <LinkContainer to="/">
+            <Navbar.Brand>
+              <img src={logo} alt="Shoppper" />
+              Shoppper
+            </Navbar.Brand>
+          </LinkContainer>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            {/* Add your navigation links here */}
+            <Nav className="ms-auto">
+              {" "}
+              {/* Example of adding a navigation item to the right */}
+              <LinkContainer to="/">
+                <Nav.Link>
+                  <FaShoppingCart /> Cart
+                </Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/">
+                <Nav.Link>
+                  <FaUser /> Login
+                </Nav.Link>
+              </LinkContainer>
+            </Nav>
+          </Navbar.Collapse>{" "}
+          {/* Closing the Navbar.Collapse component properly */}
+        </Container>
+      </Navbar>
+    </header>
+  );
+};
+
+export default Header;
